@@ -26,8 +26,8 @@ module.exports = {
     try
     {
     conversationLog.push({role: 'user', content: interaction.options.getString('prompt'),});
-    const result = await openai.createChatCompletion({model: 'gpt-3.5-turbo', messages: conversationLog,});
-    interaction.reply(result.data.choices[0].message);
+    const result = await openai.createChatCompletion({model: 'gpt-3.5-turbo', messages: conversationLog,max_tokens:1500});
+    interaction.reply('Original message: ' + interaction.options.getString('prompt') + '\n\n' + result.data.choices[0].message.content);
     } 
     catch(error)
     {
