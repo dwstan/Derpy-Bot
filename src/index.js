@@ -1,6 +1,5 @@
 require('dotenv').config();
 const {Client, IntentsBitField} = require('discord.js');
-const{Configuration, OpenAIAPI, OpenAIApi} = require('openai');
 const eventHandler = require('./handlers/eventHandler');
 
 const client = new Client({
@@ -11,17 +10,6 @@ const client = new Client({
         IntentsBitField.Flags.MessageContent,
     ],
 });
-
-
-const gptConfig = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
-});
-
-const openai = new OpenAIApi(gptConfig);
-
-
-//commands
-
 
 
 eventHandler(client);
