@@ -1,3 +1,6 @@
+//set as deleted, meaning that while the code still exists, it does not run.
+//this is because it is wildly expensive
+
 require('dotenv').config();
 
 const { ApplicationCommandOptionType} = require('discord.js');
@@ -14,7 +17,7 @@ module.exports = {
         type: ApplicationCommandOptionType.String,
       }
     ],
-    //deleted: true,
+    deleted: true,
 
     callback: async (client, interaction) => {
 
